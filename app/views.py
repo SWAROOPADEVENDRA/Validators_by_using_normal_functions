@@ -31,9 +31,9 @@ def insert_webpage(request):
             ur=WDEO.cleaned_data['url']
             em=WDEO.cleaned_data['email']
 
-            WO=Webpage.objects.get_or_create(topic_name=TO,name=na,url=ur,email=em)[0]
-            WO.save()
-            return HttpResponse('Webpage create successfully')
+            #WO=Webpage.objects.get_or_create(topic_name=TO,name=na,url=ur,email=em)[0]
+            #WO.save()
+            return HttpResponse(str(WDEO.cleaned_data))
         else:
             return HttpResponse('Invalid data')
     return render(request,'insert_webpage.html',d)
